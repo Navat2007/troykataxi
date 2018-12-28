@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3f14e3cd-55cb-43a1-a543-84dbdaee082f" name="VPS" url="http://185.179.188.126">
+        <fileTransfer host="185.179.188.126" port="15000" rootFolder="/var/www/troykataxi.ru" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="15000" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

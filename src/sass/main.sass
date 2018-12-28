@@ -1,0 +1,88 @@
+//.container
+//  @include media(xl, max)
+//    max-width: 100% !important
+//    padding:
+//      left: 0
+//      right: 0
+
+#header
+  padding: em(12)
+.header
+  align-items: center
+  &__phone
+    margin-left: auto
+    a
+      font-family: $ff
+      font-size: em(26)
+      color: $white
+  &__social
+    margin-left: auto
+    @include media(md)
+      margin-left: 0
+    a
+      display: inline-block
+      margin: 0 0.25em
+#title
+  flex: auto
+  @include bg_img_jpg("../img/bg/", "bg", bottom, cover)
+  min-height: em(450)
+  @include media(md)
+    min-height: em(536)
+  width: 100%
+  max-width: 1400px
+  margin: auto
+  padding: em(16) 0
+  h1
+    padding: emChild(48, 51.8)
+    float: right
+    font-family: $ff_02
+    font-size: em(41.8)
+    @include media(md)
+      font-size: em(51.8)
+    text-transform: uppercase
+    color: #e4c646
+
+#orderContainer
+  padding: em(16) 0
+  flex: auto
+  @include bg_img_jpg("../img/bg/", "bg", bottom, cover)
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  max-width: 1400px
+  margin: auto
+
+#searchContainer
+  padding: em(20)
+.searchContainer
+  &__title
+    margin-bottom: em(20)
+    p
+      font-family: $ff
+      font-size: em(29)
+      text-align: center
+      color: $yellow
+#cars
+  background-color: $white
+.cars
+  padding: em(16)
+  &__title
+    margin-bottom: em(24)
+    p
+      font-family: $ff
+      font-size: em(29)
+      text-transform: uppercase
+      text-align: center
+      color: $blue
+  &__img
+    display: inline-block
+    height: em(90)
+    img
+      height: 100%
+
+#footer
+  padding: em(16)
+  p
+    font-size: em(17.4)
+    color: #fef0bf

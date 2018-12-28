@@ -1,0 +1,27 @@
+{
+ "name": "Русское такси ТРОЙКА На Пхукете",
+ "short_name": "Такси ТРОЙКА",
+ "icons": [{
+  "src": "icon_128x128.png",
+  "sizes": "128x128",
+  "type": "image/png"
+ }, {
+  "src": "icon_152x152.png",
+  "sizes": "152x152",
+  "type": "image/png"
+ }, {
+  "src": "icon_192x192.png",
+  "sizes": "192x192",
+  "type": "image/png"
+ }],
+ "start_url": "/index.php?homescreen=1",
+ "display": "standalone",
+ "background_color": "#fbe05b",
+ "theme_color": "#d43c33",
+
+ "api_version": 4,
+ "layout": {
+  "logo": "https://xn--24-mlctyuep.xn--p1ai/favicon/icon_ya.png",
+  "color": "#ffffff"
+ }
+}

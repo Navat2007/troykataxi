@@ -1,0 +1,147 @@
+/*КОЛОНКА С ОРДЕРОМ*/
+.order
+  @extend %card
+  margin: 0 auto 2em
+  padding: 0.75em 1.5em
+  &__title
+    margin-bottom: 0.75em
+    p
+      font-family: $ff_02
+      font-size: em(24)
+      text-transform: uppercase
+      color: $black
+  &__way
+    margin-bottom: 1em
+    p
+      color: $black
+      font-family: $ff
+    p:first-of-type
+      font-size: em(17.8)
+    p:last-of-type
+      font-size: em(14)
+      font-style: italic
+  &__complete
+    //width: 20em
+    p
+      text-align: center
+      &:first-of-type
+        font-family: $ff_02
+        color: $blue
+        font-size: em(28)
+      &:last-of-type
+        font-family: $ff
+        font-size: em(17)
+        color: $black
+
+/*СОГЛАШЕНИЕ*/
+.agreement
+  display: flex
+  align-items: center
+  margin-bottom: 0
+  input[type="checkbox"]
+    display: none
+  i
+    margin-right: 0.75em
+  span
+    font-family: $ff
+    font-size: em(14)
+    letter-spacing: normal
+    color: $black
+
+/*КОЛОНКА С ПОДИТОГОМ*/
+.summary
+  @extend %card
+  background-color: lighten($yellow, 25%)
+  padding: 0.75em 1.25em
+  margin-bottom: 1.5em
+  // ЗАГОЛОВОК ТРАНСФЕРА
+  &__head
+    margin-bottom: 0.75em
+    color: $black
+    strong
+      font-family: $ff_02
+      font-size: em(24)
+      text-transform: uppercase
+      color: $black
+      display: block
+      margin-bottom: emChild(16, 24)
+    span
+      font-family: $ff
+      color: rgba($black, 0.87)
+      font-size: em(17.8)
+  // ПОД ЗАГОЛОВОК
+  &__subtitle
+    font-family: $ff_02
+    color: rgba($black, 0.87)
+    font-size: em(20)
+    padding-bottom: emChild(14, 20)
+    &:first-letter
+      text-transform: uppercase
+  &__route
+    margin-bottom: 1.25em
+    // Имя и Емайл
+    p
+      font-family: $ff
+      font-size: em(16)
+      color: rgba($black, 0.54)
+
+  // СТОИМОСТЬ
+  &__price
+    display: flex
+    align-items: center
+    padding-bottom: 0.5em
+    p
+      font-family: $ff
+      color: $black
+      line-height: 1.15
+      &:first-of-type
+        flex: auto
+        font-size: em(14)
+        color: rgba($black, 0.54)
+      &:last-of-type
+        font-size: em(16)
+        white-space: nowrap
+        color: rgba($black, 0.87)
+  // ИТОГОВАЯ СТОИМОСТЬ
+  &__total
+    border-top: 1px solid rgba($black, 0.24)
+    margin-top: 1em
+    padding-top: 1em
+    display: flex
+    align-items: baseline
+    justify-content: space-between
+    p
+      text-align: right
+      color: $black
+    & div
+      p
+        flex: none
+        font-family: $ff_02
+        font-size: em(20)
+      span
+        font-family: $ff
+        font-size: em(16)
+  // Блок откуда/куда
+  &__place
+    font-family: $ff
+    font-size: em(16)
+    color: rgba($black, 0.87)
+    position: relative
+    padding-left: 1.75em
+    // Круглешок и полоска
+    &:before, &:after
+      content: ""
+      position: absolute
+      top: .75em
+      background: rgba($blue, 0.6)
+      width: .3125em
+      height: .3125em
+      left: .4375em
+      @include br(50%)
+    &:first-child::after
+      width: 1px
+      height: 100%
+      left: .5625em
+    p:not(:first-of-type)
+      font-size: em(12)
+      line-height: 1.75
