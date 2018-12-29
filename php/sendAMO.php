@@ -17,7 +17,7 @@ if ($action == "call") {
             array(
                 0 =>
                     array(
-                        'source_name' => 'Форма на сайте пхукет24.рф',
+                        'source_name' => 'Форма на сайте troykataxi.ru',
                         'source_uid' => '1111111',
                         'created_at' => time(),
                         'incoming_entities' =>
@@ -26,7 +26,7 @@ if ($action == "call") {
                                     array(
                                         0 =>
                                             array(
-                                                'name' => 'пхукет24.рф: Заказ звонка',
+                                                'name' => 'troykataxi.ru: Заказ звонка',
                                             ),
                                     ),
                                 'contacts' =>
@@ -56,7 +56,7 @@ if ($action == "call") {
                         'incoming_lead_info' =>
                             array(
                                 'form_id' => '434343',
-                                'form_page' => 'пхукет24.рф - Заказ звонка',
+                                'form_page' => 'troykataxi.ru - Заказ звонка',
                                 'ip' => '99.995.262.6',
                                 'service_code' => '000002',
                             ),
@@ -94,7 +94,7 @@ if ($action == "callback") {
             array(
                 0 =>
                     array(
-                        'source_name' => 'Форма на сайте пхукет24.рф',
+                        'source_name' => 'Форма на сайте troykataxi.ru',
                         'source_uid' => '1111111',
                         'created_at' => time(),
                         'incoming_entities' =>
@@ -103,7 +103,7 @@ if ($action == "callback") {
                                     array(
                                         0 =>
                                             array(
-                                                'name' => 'пхукет24.рф: Обратная связь',
+                                                'name' => 'troykataxi.ru: Обратная связь',
                                                 'notes' =>
                                                     array(
                                                         0 =>
@@ -155,7 +155,7 @@ if ($action == "callback") {
                         'incoming_lead_info' =>
                             array(
                                 'form_id' => '434343',
-                                'form_page' => 'пхукет24.рф - Обратная связь: ' . $message,
+                                'form_page' => 'troykataxi.ru - Обратная связь: ' . $message,
                                 'ip' => '99.995.262.6',
                                 'service_code' => '000002',
                             ),
@@ -221,7 +221,7 @@ if ($action == "order") {
             array(
                 0 =>
                     array(
-                        'source_name' => 'Форма на сайте пхукет24.рф',
+                        'source_name' => 'Форма на сайте troykataxi.ru',
                         'source_uid' => '1111111',
                         'created_at' => time(),
                         'incoming_entities' =>
@@ -230,7 +230,7 @@ if ($action == "order") {
                                     array(
                                         0 =>
                                             array(
-                                                'name' => 'пхукет24.рф: Заказ трансфера',
+                                                'name' => 'troykataxi.ru: Заказ трансфера',
                                                 'custom_fields' =>
                                                     array(
                                                         // Номер рейса
@@ -318,7 +318,7 @@ if ($action == "order") {
                         'incoming_lead_info' =>
                             array(
                                 'form_id' => '434343',
-                                'form_page' => 'пхукет24.рф - Заказ трансфера',
+                                'form_page' => 'troykataxi.ru - Заказ трансфера',
                                 'ip' => '99.995.262.6',
                                 'service_code' => '000002',
                             ),
@@ -387,7 +387,7 @@ if ($action == "order") {
                 <tr>
                     <td colspan="2">
                         <div class="logo" style="max-width: 300px; margin: auto; display: flex;">
-                            <a href="https://xn--24-mlctyuep.xn--p1ai" style="display: inline-block; margin-right: 0.5em;">
+                            <a href="https://troykataxi.ru" style="display: inline-block; margin-right: 0.5em;">
                                 <img src="https://xn--24-mlctyuep.xn--p1ai/img/logo.png" alt="Русское такси на Пхукете" border="0" height="90" width="90">
                             </a>
                             <div>
