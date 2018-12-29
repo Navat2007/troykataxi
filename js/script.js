@@ -398,6 +398,8 @@ $(document).ready(function () {
                     }
 
                     $('#cars_choice').css('display', 'block');
+
+                    $('html, body').animate({ scrollTop: $('#form_search').offset().top }, 700);
                 },
                 error: function (data) {
                     console.log('ERROR \n');
