@@ -533,7 +533,12 @@ $(document).ready(function () {
     });
 
     search_from_input.on('click', function (event) {
-        console.log(search_from_input.css('display'));
+        if($('#taxi_from').css('display') == "block")
+        {
+            close_all();
+            return;
+        }
+
         close_all();
         search("", "from");
     });
@@ -573,6 +578,12 @@ $(document).ready(function () {
     });
 
     search_to_input.on('click', function (event) {
+        if($('#taxi_to').css('display') == "block")
+        {
+            close_all();
+            return;
+        }
+
         close_all();
         search("", "to");
     });
