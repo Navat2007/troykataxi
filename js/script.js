@@ -510,7 +510,6 @@ $(document).ready(function () {
         document.getElementById('summ').innerHTML = sum + amount + " THB";
         document.getElementById('summ_other').innerHTML = ceil(sum + amount, "USD") + " USD | " + ceil(sum + amount, "RUR") + " RUB";
     }
-
     //#endregion
 
     //#region SERCH WAY FROM
@@ -716,7 +715,6 @@ $(document).ready(function () {
                                     USD_CURSE = usd / thb;
                                     USD_CURSE *= CURSE_MULTIPLY;
 
-                                    loadWaysPrice();
                                     calc(0);
                                 },
                                 error: function (error) {
