@@ -715,7 +715,8 @@ $(document).ready(function () {
                                     USD_CURSE = usd / thb;
                                     USD_CURSE *= CURSE_MULTIPLY;
 
-                                    calc(0);
+                                    if(document.getElementById('summ') != null)
+                                        calc(0);
                                 },
                                 error: function (error) {
                                     console.log(error);
