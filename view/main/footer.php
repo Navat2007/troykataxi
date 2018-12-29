@@ -13,7 +13,7 @@
 <script src="https://cdn.jsdelivr.net/gh/RobinHerbots/Inputmask@3.3.7/dist/inputmask/inputmask.phone.extensions.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/RobinHerbots/Inputmask@3.3.7/dist/inputmask/jquery.inputmask.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/RobinHerbots/Inputmask@3.3.7/dist/inputmask/phone-codes/phone.js"></script>
-<script defer async src="js/script.min.js?<?php echo rand();?>"></script>
+<script defer async src="js/script.js?<?php echo rand();?>"></script>
 
 <!-- BEGIN JIVOSITE CODE {literal} -->
 <script async>

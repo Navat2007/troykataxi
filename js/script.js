@@ -533,6 +533,7 @@ $(document).ready(function () {
     });
 
     search_from_input.on('click', function (event) {
+        console.log(search_from_input.css('display'));
         close_all();
         search("", "from");
     });
