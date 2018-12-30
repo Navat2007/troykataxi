@@ -37,10 +37,10 @@
 <section id="header">
     <div class="container">
         <div class="row header">
-            <a href="./" class="col-auto">
-                <img src="img/svg/logo.svg" height="47" alt="Русское такси на Пхукете">
+            <a href="./" class="col-6 col-md-auto">
+                <img src="img/svg/logo.svg" alt="Русское такси на Пхукете">
             </a>
-            <div class="col-auto header__phone">
+            <div class="col-6 col-md-auto header__phone">
                 <a href="tel:88005517233">8 800 551 72 33</a>
             </div>
             <div class="col-auto header__social">

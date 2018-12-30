@@ -9,8 +9,12 @@
   padding: em(12)
 .header
   align-items: center
+  // LOGOTYPE
+  & > a img
+    height: em(47)
   &__phone
     margin-left: auto
+    text-align: right
     a
       font-family: $ff
       font-size: em(26)
@@ -25,20 +29,21 @@
 #title
   flex: auto
   @include bg_img_jpg("../img/bg/", "bg", bottom, cover)
-  min-height: em(450)
+  min-height: em(380)
   @include media(md)
-    min-height: em(536)
+    min-height: em(500)
   width: 100%
   max-width: 1400px
   margin: auto
   padding: em(16) 0
   h1
-    padding: emChild(48, 51.8)
     float: right
     font-family: $ff_02
+    padding: emChild(28, 41.8)
     font-size: em(41.8)
     @include media(md)
-      font-size: em(51.8)
+      font-size: em(48)
+      padding: emChild(38, 48)
     text-transform: uppercase
     color: #e4c646
 
@@ -54,13 +59,15 @@
   margin: auto
 
 #searchContainer
-  padding: em(20)
+  padding: em(16)
 .searchContainer
   &__title
-    margin-bottom: em(20)
+    margin-bottom: em(16)
     p
       font-family: $ff
-      font-size: em(29)
+      font-size: em(24)
+      @include media(md)
+        font-size: em(28)
       text-align: center
       color: $yellow
 #cars
