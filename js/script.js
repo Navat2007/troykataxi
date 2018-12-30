@@ -18,6 +18,10 @@ $(document).ready(function () {
         $('input[type="phone"]').inputmask({alias: "phone", "clearIncomplete": true});
     });
 
+    scr_h = window.innerHeight;
+    scr_w = window.innerWidth;
+    $('body').css({'min-height': scr_h, 'max-width': scr_w});
+
     // FLOWTYPE
     $('body').flowtype({
         minimum: 320,
