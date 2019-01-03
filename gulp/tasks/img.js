@@ -241,15 +241,15 @@ module.exports = function () {
     $.gulp.task('webp', function (done) {
         var imgFolder = [
             'img/bg',
-            'img/cars/mini',
+            // 'img/cars/mini',
         ];
         var imgSrc = [
             'src/img/bg/*.*',
-            'src/img/cars/*.*',
+            // 'src/img/cars/*.*',
         ];
         var imgSize = [
             2400,
-            800,
+            // 800,
         ];
         imgFolder.forEach(function (item, i, array) {
             $.gulp.src(imgSrc[i])

@@ -30,21 +30,26 @@
         width: em(27)
 #title
   flex: auto
-  @include bg_img_jpg("../img/bg/", "bg", bottom, cover)
-  min-height: em(380)
+  @include bg_img_jpg("../img/bg/", "bg", center 0%, cover)
+  min-height: em(348)
   @include media(md)
-    min-height: em(500)
+    background-position: center!important
+    min-height: em(536)
   width: 100%
-  max-width: 1400px
+  max-width: 1200px
   margin: auto
   padding: em(16) 0
   h1
+    text-align: center
     float: right
+    width: 100%
     font-family: $ff_02
     line-height: 1.15
-    padding: emChild(28, 41.8)
+    padding: emChild(24, 41.8)
     font-size: em(41.8)
     @include media(md)
+      width: auto
+      text-align: left
       font-size: em(48)
       padding: emChild(36, 48)
     text-transform: uppercase
