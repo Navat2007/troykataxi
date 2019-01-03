@@ -29,7 +29,8 @@ if (empty($amount)) {
             <div class="row">
                 <div class="col-md-8">
                     <!-- ORDER -->
-                    <form action="php/sendAMO.php" method="post" class="order" id="order_form">
+                    <form action="php/sendAMO.php" method="post" class="order" id="order_form"
+                    onsubmit="yaCounter51784160.reachGoal('zakaz'); return true;">
                         <input type="hidden" name="action" value="order">
                         <input type="hidden" name="car" value="<?= $auto; ?> ">
                         <input type="hidden" name="passengers" value="<?= $passengers; ?> ">

@@ -45,16 +45,20 @@
                 <img src="img/svg/logo.svg" alt="Русское такси на Пхукете">
             </a>
             <div class="col-auto header__phone">
-                <a href="tel:88005517233">8 800 551 72 33</a>
+                <a href="tel:+74951280733"
+                   onclick="yaCounter51784160.reachGoal('phone'); return true;">+7 495 128 07 33</a>
             </div>
             <div class="col-auto header__social">
-                <a href="view/social/whatsupp/" target="_blank">
+                <a href="view/social/whatsupp/" target="_blank"
+                   onclick="yaCounter51784160.reachGoal('whatsapp'); return true;">
                     <img src="img/svg/w.svg" alt="WhatsApp">
                 </a>
-                <a href="view/social/viber/" target="_blank">
+                <a href="view/social/viber/" target="_blank"
+                   onclick="yaCounter51784160.reachGoal('viber'); return true;">
                     <img src="img/svg/v.svg" alt="viber">
                 </a>
-                <a href="view/social/telegramm/" target="_blank">
+                <a href="view/social/telegramm/" target="_blank"
+                   onclick="yaCounter51784160.reachGoal('telegram'); return true;">
                     <img src="img/svg/t.svg" alt="telegramm">
                 </a>
             </div>
