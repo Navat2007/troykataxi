@@ -10,7 +10,7 @@
     <meta property="og:title" content="<?php echo $title; ?>"/>
     <meta property="og:site_name" content="<?php echo $title; ?>"/>
     <meta property="og:description" content="<?php echo $meta_desc; ?>"/>
-    <meta property="og:image:secure_url" content="<?php echo $site_name; ?>/img/svg/logo.png"/>
+    <meta property="og:image:secure_url" content="<?php echo $site_name; ?>/img/svg/logo.svg"/>
     <meta property="og:locale" content="ru"/>
     <meta property="og:url" content="<?php echo $site_name; ?>"/>
 
@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row header">
             <a href="./" class="col-auto">
-                <img src="img/svg/logo.svg" alt="Русское такси на Пхукете">
+                <img src="img/svg/logo.svg" alt="Такси Тройка на Пхукете">
             </a>
             <div class="col-auto header__phone">
                 <a href="tel:+74951280733"

@@ -386,13 +386,12 @@ if ($action == "order") {
                 <tbody>
                 <tr>
                     <td colspan="2">
-                        <div class="logo" style="max-width: 300px; margin: auto; display: flex;">
+                        <div class="logo" style="max-width: 300px; margin: auto; display: flex; align-items: center;">
                             <a href="https://troykataxi.ru" style="display: inline-block; margin-right: 0.5em;">
-                                <img src="https://xn--24-mlctyuep.xn--p1ai/img/logo.png" alt="Русское такси на Пхукете" border="0" height="90" width="90">
+                                <img src="https://troykataxi.ru/favicon/icon_192x192.png" alt="Такси Тройка на Пхукете" border="0" height="90" width="90">
                             </a>
                             <div>
-                                <h1 class="logo__text" style="font-weight: bold; margin: 0; padding: 0; font-size: 1.5em; line-height: 1; white-space: nowrap; text-transform: uppercase; color: #d43c33;">Русское такси <br><span style="display: block; text-align: left; font-size: 1.33em; font-style: normal;">На Пхукете</span></h1>
-                                <p class="logo__smallText" style="padding: 0; margin: 0; font-weight: bold; font-size: 1.0625em; line-height: 1; letter-spacing: 0.025em; color: #000000; margin-top: 0.75em;">работаем с 2014 года</p>
+                                <h1 class="logo__text" style="font-weight: bold; margin: 0; padding: 0; font-size: 1.5em; line-height: 1; white-space: nowrap; text-transform: uppercase; color: #0a2735;">Такси Тройка<br><span style="display: block; text-align: left; font-size: 1.33em; font-style: normal;">На Пхукете</span></h1>
                             </div>
                         </div>
                     </td>
