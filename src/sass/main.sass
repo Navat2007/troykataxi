@@ -30,7 +30,8 @@
         width: em(27)
 #title
   flex: auto
-  @include bg_img_jpg("../img/bg/", "bg", center 0%, cover)
+  @include bg_img_jpg("../img/bg/", "bg", center, cover)
+  //padding-top: 54.16666666666667%
   min-height: em(348)
   @include media(md)
     background-position: center!important
@@ -40,6 +41,7 @@
   margin: auto
   padding: em(16) 0
   h1
+    //margin-top: -54.16666666666667%
     text-align: center
     float: right
     width: 100%

@@ -1,21 +1,28 @@
 <?php
 
-$title = "Такси Тройка на Пхукете";
-$site_name = "http://troykataxi.ru";
-//
-//  if ($meta_desc == ''){
-//    $meta_desc = "Расчитай стоимость такси по Пхукету на 30% дешевле!";
-//  }
+$site_name = "Русское такси Тройка"; // Название сайта - не изменяется OG
+$title = "Такси на Пхукете из аэропорта: заказать онлайн 24 часа ✔";
+$meta_key = "трансфер, такси, аэропорт, Пхукет, Краби, Самуи, Пхи Пхи, Карон, Патонг";
+$og_type = 'website';
+$og_locale = 'ru_RU';
+$site_url = "http://troykataxi.ru";
+$og_imgurl = $site_url . '/favicon/icon_192x192.png';
 
-$meta_key = "трансфер пхукет, такси пхукет, русское такси на пхукете, 
-            такси на пхукете из аэропорта, трансфер пхукет краби, 
-            трансфер пхукет самуи, 
-            трансфер пхукет отель, трансфер пхукет пхи пхи, 
-            трансфер пхукет карон, трансфер пхукет патонг";
-
-//  $site_base = '/'; // Путь от корня для css js img НУЖНО МЕНЯТЬ
+//$site_base = '/'; // Путь от корня для css js img НУЖНО МЕНЯТЬ
 $site_base = '/troykataxi/'; // Путь от корня для css js img
 
+// OPEN GRAPH
+$open_graph = array(
+    'type' => $og_type,
+    'title' => $title,
+    'site_name' => $site_name,
+    'description' => $meta_desc,
+    'url' => $site_url,
+    'image' => $og_imgurl,
+    'locale' => $og_locale
+);
+
+// ПОДКЛЮЧЕНИЕ СТИЛЕЙ
 $styles = array(
     'https://fonts.googleapis.com/icon?family=Material+Icons',
     'fonts/font.css',
