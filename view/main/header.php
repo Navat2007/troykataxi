@@ -9,7 +9,7 @@
     <?php
     if (!empty($open_graph) && is_array($open_graph)) {
         foreach ($open_graph AS $property => $content) {
-            echo '<meta property="og:' . $property . '" content="' . $content .'">';
+            echo '<meta property="og:' . $property . '" content="' . $content . '">';
         }
     }
     ?>
@@ -42,20 +42,28 @@
   <div class="container">
     <div class="row header">
       <a href="./" class="col-auto">
-        <img src="img/svg/logo.svg" alt="Такси Тройка на Пхукете">
-      </a>
+        <img src="img/svg/logo.svg" alt="Такси Тройка на Пхукете"></a>
       <div class="col-auto header__phone">
-        <a href="tel:+74951280733" onclick="yaCounter51784160.reachGoal('phone'); return true;">+7 495 128 07 33</a>
+        <a href="tel:+74951280733"
+           onclick="yaCounter51784160.reachGoal('phone'); return true;"
+           rel="nofollow noopener">+7 495 128 07 33</a>
       </div>
       <div class="col-auto header__social">
-        <a href="view/social/whatsupp/" target="_blank" onclick="yaCounter51784160.reachGoal('whatsapp'); return true;">
-          <img src="img/svg/w.svg" alt="WhatsApp">
-        </a> <a href="view/social/viber/" target="_blank" onclick="yaCounter51784160.reachGoal('viber'); return true;">
-          <img src="img/svg/v.svg" alt="viber">
-        </a> <a href="view/social/telegramm/" target="_blank"
-                onclick="yaCounter51784160.reachGoal('telegram'); return true;">
-          <img src="img/svg/t.svg" alt="telegramm">
-        </a>
+        <a href="view/social/whatsupp/"
+           target="_blank"
+           onclick="yaCounter51784160.reachGoal('whatsapp'); return true;"
+           rel="nofollow noopener">
+          <img src="img/svg/w.svg" alt="WhatsApp"></a>
+        <a href="view/social/viber/"
+           target="_blank"
+           onclick="yaCounter51784160.reachGoal('viber'); return true;"
+           rel="nofollow noopener">
+          <img src="img/svg/v.svg" alt="viber"></a>
+        <a href="view/social/telegramm/"
+           target="_blank"
+           onclick="yaCounter51784160.reachGoal('telegram'); return true;"
+           rel="nofollow noopener">
+          <img src="img/svg/t.svg" alt="telegramm"></a>
       </div>
     </div>
   </div>
