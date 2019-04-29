@@ -112,6 +112,23 @@ $(document).ready(function () {
                             finalHtml += "</div>";
                             finalHtml += "<p>за транспортное средство</p>";
                             finalHtml += "<input class=\"detailBtn\" type=\"button\" id=\"order_taxi_car\" value=\"ВЫБРАТЬ\">";
+    
+                            finalHtml += "<div class=\"search__social\" style='margin-top: 0.5em;'>";
+                            finalHtml += "<p>Заказать через:</p>";
+                            finalHtml += "<a href=\"view/social/whatsupp/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('whatsapp'); return true;\">";
+                            finalHtml += "<img src='img/svg/whatsApp_round.svg' alt='whatsapp'>";
+                            finalHtml += "</a>";
+                            finalHtml += "<a href=\"view/social/viber/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('viber'); return true;\">";
+                            finalHtml += "<img src='img/svg/viber_round.svg' alt='viber'>";
+                            finalHtml += "</a>";
+                            finalHtml += "<a href=\"view/social/telegramm/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('telegram'); return true;\">";
+                            finalHtml += "<img src='img/svg/telegram_round.svg' alt='telegram'>";
+                            finalHtml += "</a>";
+                            finalHtml += "</div>";
+                            
                             finalHtml += "</div>";
                             finalHtml += "</div>";
 
@@ -180,6 +197,23 @@ $(document).ready(function () {
                             finalHtml += "</div>";
                             finalHtml += "<p>за транспортное средство</p>";
                             finalHtml += "<input class=\"detailBtn\" type=\"button\" id=\"order_taxi_minivan\" value=\"ВЫБРАТЬ\">";
+    
+                            finalHtml += "<div class=\"search__social\" style='margin-top: 0.5em;'>";
+                            finalHtml += "<p>Заказать через:</p>";
+                            finalHtml += "<a href=\"view/social/whatsupp/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('whatsapp'); return true;\">";
+                            finalHtml += "<img src='img/svg/whatsApp_round.svg' alt='whatsapp'>";
+                            finalHtml += "</a>";
+                            finalHtml += "<a href=\"view/social/viber/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('viber'); return true;\">";
+                            finalHtml += "<img src='img/svg/viber_round.svg' alt='viber'>";
+                            finalHtml += "</a>";
+                            finalHtml += "<a href=\"view/social/telegramm/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('telegram'); return true;\">";
+                            finalHtml += "<img src='img/svg/telegram_round.svg' alt='telegram'>";
+                            finalHtml += "</a>";
+                            finalHtml += "</div>";
+                            
                             finalHtml += "</div>";
                             finalHtml += "</div>";
 
@@ -250,6 +284,23 @@ $(document).ready(function () {
                             finalHtml += "</div>";
                             finalHtml += "<p>за транспортное средство</p>";
                             finalHtml += "<input class=\"detailBtn\" type=\"button\" id=\"order_taxi_vip_minivan\" value=\"ВЫБРАТЬ\">";
+    
+                            finalHtml += "<div class=\"search__social\" style='margin-top: 0.5em;'>";
+                            finalHtml += "<p>Заказать через:</p>";
+                            finalHtml += "<a href=\"view/social/whatsupp/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('whatsapp'); return true;\">";
+                            finalHtml += "<img src='img/svg/whatsApp_round.svg' alt='whatsapp'>";
+                            finalHtml += "</a>";
+                            finalHtml += "<a href=\"view/social/viber/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('viber'); return true;\">";
+                            finalHtml += "<img src='img/svg/viber_round.svg' alt='viber'>";
+                            finalHtml += "</a>";
+                            finalHtml += "<a href=\"view/social/telegramm/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('telegram'); return true;\">";
+                            finalHtml += "<img src='img/svg/telegram_round.svg' alt='telegram'>";
+                            finalHtml += "</a>";
+                            finalHtml += "</div>";
+                            
                             finalHtml += "</div>";
                             finalHtml += "</div>";
 
@@ -320,6 +371,23 @@ $(document).ready(function () {
                             finalHtml += "</div>";
                             finalHtml += "<p>за транспортное средство</p>";
                             finalHtml += "<input class=\"detailBtn\" type=\"button\" id=\"order_taxi_minivan\" value=\"ВЫБРАТЬ\">";
+    
+                            finalHtml += "<div class=\"search__social\" style='margin-top: 0.5em;'>";
+                            finalHtml += "<p>Заказать через:</p>";
+                            finalHtml += "<a href=\"view/social/whatsupp/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('whatsapp'); return true;\">";
+                            finalHtml += "<img src='img/svg/whatsApp_round.svg' alt='whatsapp'>";
+                            finalHtml += "</a>";
+                            finalHtml += "<a href=\"view/social/viber/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('viber'); return true;\">";
+                            finalHtml += "<img src='img/svg/viber_round.svg' alt='viber'>";
+                            finalHtml += "</a>";
+                            finalHtml += "<a href=\"view/social/telegramm/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('telegram'); return true;\">";
+                            finalHtml += "<img src='img/svg/telegram_round.svg' alt='telegram'>";
+                            finalHtml += "</a>";
+                            finalHtml += "</div>";
+                            
                             finalHtml += "</div>";
                             finalHtml += "</div>";
 
@@ -390,6 +458,23 @@ $(document).ready(function () {
                             finalHtml += "</div>";
                             finalHtml += "<p>за транспортное средство</p>";
                             finalHtml += "<input class=\"detailBtn\" type=\"button\" id=\"order_taxi_truck\" value=\"ВЫБРАТЬ\">";
+    
+                            finalHtml += "<div class=\"search__social\" style='margin-top: 0.5em;'>";
+                            finalHtml += "<p>Заказать через:</p>";
+                            finalHtml += "<a href=\"view/social/whatsupp/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('whatsapp'); return true;\">";
+                            finalHtml += "<img src='img/svg/whatsApp_round.svg' alt='whatsapp'>";
+                            finalHtml += "</a>";
+                            finalHtml += "<a href=\"view/social/viber/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('viber'); return true;\">";
+                            finalHtml += "<img src='img/svg/viber_round.svg' alt='viber'>";
+                            finalHtml += "</a>";
+                            finalHtml += "<a href=\"view/social/telegramm/\" target=\"_blank\"";
+                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('telegram'); return true;\">";
+                            finalHtml += "<img src='img/svg/telegram_round.svg' alt='telegram'>";
+                            finalHtml += "</a>";
+                            finalHtml += "</div>";
+                            
                             finalHtml += "</div>";
                             finalHtml += "</div>";
 
