@@ -1133,11 +1133,21 @@ function QrTarget() {
     var way_from = $('#taxi_from_input').val();
     var way_to = $('#taxi_to_input').val();
     
+    var adult_count = parseInt(document.getElementById('adult_count').innerHTML);
+    var child_count = parseInt(document.getElementById('child_count').innerHTML);
+    
+    var PEOPLE_COUNT = adult_count + child_count;
+    
     $("#whatsapp_sedan, #whatsapp_minivan, #whatsapp_vip_minivan, #whatsapp_pickup").on("click", function () {
-        
+    
+        var price = $(this).parent().parent().find(".currencyBlock").children("p:first-of-type").text();
         var car_name = $(this).parent().parent().parent().find(".detailTitle").text();
-        
-        var link = "https://api.whatsapp.com/send?phone=66945800333&text= Откуда > " + way_from + "%0d%0a, Куда > " + way_to + "%0d%0a, Машина > " + car_name + ".%0d%0a";
+    
+        var link = "https://api.whatsapp.com/send?phone=66945800333&text= From-" + way_from
+            + "%0d%0a To-" + way_to
+            + "%0d%0a Pax-" + PEOPLE_COUNT
+            + "%0d%0a Price-" + price
+            + "%0d%0a Car.-" + car_name;
         
         if (isMobile.any()) {
             // отправка get запроса
@@ -1155,10 +1165,15 @@ function QrTarget() {
     });
     
     $("#viber_sedan, #viber_minivan, #viber_vip_minivan, #viber_pickup").on("click", function () {
-        
+    
+        var price = $(this).parent().parent().find(".currencyBlock").children("p:first-of-type").text();
         var car_name = $(this).parent().parent().parent().find(".detailTitle").text();
-        
-        var link = "viber://pa?chatURI=taxiphuket.&context=hi&text= Откуда > " + way_from + ".%0d%0a Куда > " + way_to + "%0d%0a, Машина > " + car_name + ".%0d%0a";
+    
+        var link = "viber://pa?chatURI=taxiphuket.&context=Your&text= From-" + way_from
+            + "%0d%0a To-" + way_to
+            + "%0d%0a Pax-" + PEOPLE_COUNT
+            + "%0d%0a Price-" + price
+            + "%0d%0a Car.-" + car_name;
         
         if (isMobile.any()) {
             // отправка get запроса
