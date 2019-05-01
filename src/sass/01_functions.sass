@@ -5,3 +5,22 @@
 // расчет размера в зависимости от родителя (на сколько увеличить/уменьшить)
 @function emChild($child, $parent)
   @return #{($child/16)/($parent/16)}em
+
+//// ПЕРЕВОД ШРИФТА С ПИКСЕЛЯХ В EM
+//@function em($pixels)
+//  @return #{$pixels/16}em
+//
+// расчет размера в зависимости от родителя (на сколько увеличить/уменьшить)
+@function emChild($child, $parent)
+  @return #{($child/16)/($parent/16)}em
+
+// перевод шрифта с пикселях в em
+@function em($children, $parent: false)
+  @if $parent
+    @return #{($children/16)/($parent/16)}em
+  @else
+    @return #{$children/16}em
+
+// размер в em относительно родителя
+@function emPar($emChi, $emPar)
+  @return #{$emChi/$emPar}em

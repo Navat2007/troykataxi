@@ -76,6 +76,18 @@ $breakpoints: ("sm": 576px, "md": 768px, "lg": 992px, "xl": 1200px)
   @if $lh
     line-height: $lh
 
+// +font(italic bold 1em/125% $ff, $primary)
+=font($font-base: false, $font-color: false)
+  @if $font-base
+    font: $font-base
+  @if $font-color
+    color: $font-color
+
+@mixin truncateText($overflow: ellipsis)
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: $overflow // values are: clip, ellipsis, or a string
+
 // Изменяет фоновое изображение в зависимости от масшата(width/height)
 // Добавляет начальную высоту контейнеру и процент (padding-top)
 @mixin fluid-ratio($large-size, $small-size)

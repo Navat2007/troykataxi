@@ -91,3 +91,64 @@
         color: rgba($black, 0.54)
         &:hover
           color: rgba($black, 0.87)
+
+// УНИВЕРСАЛЬНОЕ ПОПАП
+.popUpWindow
+  display: none
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  opacity: 0
+  background-color: rgba(0, 0, 0, 0.54)
+  z-index: 200
+  +transition(0.5s ease)
+  &__card
+    position: relative
+    margin: auto
+    //min-width: 20em
+    //max-width: 90vw
+    @extend %card
+    padding: 0
+  // ШАПКА
+  &__header
+    display: flex
+    align-items: center
+    padding: 1em
+    //background-color: $dark_primary
+    @include br(5px 5px 0 0)
+    p
+      //@extend %h6
+      color: white
+      padding-right: 2em
+      @include truncateText()
+      margin-right: auto
+  // закрыть
+  i.close
+    font-size: 1.25em
+    color: white
+    +br(2.5em)
+    padding: emPar(0.5, 1.25)
+    margin: -(emPar(0.5, 1.25))
+    +transition(0.3s ease, pointer)
+    &:hover
+      background-color: $primary
+    &.absolute
+      font-size: 2.5em
+      position: absolute
+      right: 0
+      top: -(emPar(3, 2.5))
+      &:hover
+        transform: rotate(90deg)
+        background-color: rgba($black, 0.26)
+  // ТЕЛО
+  &__body
+    padding: 1em 1em 0
+    max-height: 80vh
+    overflow: auto
+  // БАТОНЫ
+  &__button
+    padding: 0.5em 1em
+    display: flex
+    justify-content: flex-end

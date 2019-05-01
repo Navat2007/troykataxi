@@ -1,3 +1,133 @@
+// переменная мобильные
+var isMobile = {
+    Android: function () {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function () {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function () {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function () {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function () {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function () {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
+class PopUp {
+    
+    static prop_init() {
+        PopUp.popup_show = false;
+    }
+    
+    static show(title, body, buttons, exec_func) {
+        if (!PopUp.popup_show) {
+            $.ajax(
+                {
+                    url: "view/popUpWindow.php",
+                    type: 'POST',
+                    dataType: "html",
+                    success: function (data) {
+                        var html = data;
+                        
+                        PopUp.popup_show = true;
+                        
+                        $('#modal_cont').html(html);
+                        
+                        // проверка заголовка
+                        if (title == undefined || title == "") {
+                            
+                            $('.popUpWindow__header').css("display", "none");
+                            $("#popup_window_close_absolute").css("display", "block");
+                            $('#popup_window_close_absolute').on('click', function () {
+                                PopUp.popUp_close();
+                            });
+                            
+                        } else {
+                            
+                            $('#popUp_title').html(title);
+                            $("#popup_window_close_absolute").css("display", "none");
+                            $('#popup_window_close').on('click', function () {
+                                PopUp.popUp_close();
+                            });
+                            
+                        }
+                        // Загрузка тела
+                        if (body != undefined) {
+                            $.ajax(
+                                {
+                                    url: body,
+                                    type: 'POST',
+                                    dataType: "html",
+                                    success: function (data) {
+                                        
+                                        $('#popup_window_body').empty();
+                                        $('#popup_window_body').html(data);
+                                        
+                                        if (exec_func != undefined) {
+                                            exec_func();
+                                        }
+                                    }
+                                });
+                        }
+                        
+                        // проверка панели кнопок
+                        if (buttons == undefined || buttons == "" || buttons.btn.length == 0) {
+                            
+                            $('#popup_window_buttons').css("display", "none");
+                            
+                        } else {
+                            
+                            $('#popup_window_buttons').empty();
+                            
+                            for (let i = 0; i < buttons.btn.length; i++) {
+                                
+                                var btn = document.createElement('button');
+                                
+                                for (let j = 0; j < buttons.btn[i].class.length; j++) {
+                                    
+                                    btn.classList.add(buttons.btn[i].class[j]);
+                                    
+                                }
+                                
+                                btn.id = buttons.btn[i].ID;
+                                btn.onclick = buttons.btn[i].func;
+                                
+                                var p = document.createElement('p');
+                                p.innerText = buttons.btn[i].text;
+                                btn.appendChild(p);
+                                
+                                document.getElementById('popup_window_buttons').appendChild(btn);
+                                
+                            }
+                            
+                        }
+                        
+                        $('#popup_window').css({display: 'flex'}).animate({opacity: '1'});
+                        $('html').css({overflow: 'hidden', paddingRight: '0.2rem'});
+                    }
+                });
+        }
+    }
+    
+    static popUp_close() {
+        $('#popup_window').css({opacity: '0'});
+        
+        setTimeout(function () {
+            $('#modal_cont').empty();
+            $('html').css({overflow: 'unset', paddingRight: '0'});
+            PopUp.popup_show = false;
+        }, 500);
+    }
+    
+}
+
 $(document).ready(function () {
     var CURSE_MULTIPLY = 1;
     var RUR_CURSE = 0;
@@ -115,16 +245,13 @@ $(document).ready(function () {
     
                             finalHtml += "<div class=\"search__social\" style='margin-top: 0.5em;'>";
                             finalHtml += "<p>Заказать через:</p>";
-                            finalHtml += "<a href=\"view/social/whatsupp/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('whatsapp'); return true;\">";
+                            finalHtml += "<a id='whatsapp_sedan'>";
                             finalHtml += "<img src='img/svg/whatsApp_round.svg' alt='whatsapp'>";
                             finalHtml += "</a>";
-                            finalHtml += "<a href=\"view/social/viber/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('viber'); return true;\">";
+                            finalHtml += "<a id='viber_sedan'>";
                             finalHtml += "<img src='img/svg/viber_round.svg' alt='viber'>";
                             finalHtml += "</a>";
-                            finalHtml += "<a href=\"view/social/telegramm/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('telegram'); return true;\">";
+                            finalHtml += "<a id='telegram_sedan'>";
                             finalHtml += "<img src='img/svg/telegram_round.svg' alt='telegram'>";
                             finalHtml += "</a>";
                             finalHtml += "</div>";
@@ -200,16 +327,13 @@ $(document).ready(function () {
     
                             finalHtml += "<div class=\"search__social\" style='margin-top: 0.5em;'>";
                             finalHtml += "<p>Заказать через:</p>";
-                            finalHtml += "<a href=\"view/social/whatsupp/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('whatsapp'); return true;\">";
+                            finalHtml += "<a id='whatsapp_minivan'>";
                             finalHtml += "<img src='img/svg/whatsApp_round.svg' alt='whatsapp'>";
                             finalHtml += "</a>";
-                            finalHtml += "<a href=\"view/social/viber/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('viber'); return true;\">";
+                            finalHtml += "<a id='viber_minivan'>";
                             finalHtml += "<img src='img/svg/viber_round.svg' alt='viber'>";
                             finalHtml += "</a>";
-                            finalHtml += "<a href=\"view/social/telegramm/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('telegram'); return true;\">";
+                            finalHtml += "<a id='telegram_minivan'>";
                             finalHtml += "<img src='img/svg/telegram_round.svg' alt='telegram'>";
                             finalHtml += "</a>";
                             finalHtml += "</div>";
@@ -287,16 +411,13 @@ $(document).ready(function () {
     
                             finalHtml += "<div class=\"search__social\" style='margin-top: 0.5em;'>";
                             finalHtml += "<p>Заказать через:</p>";
-                            finalHtml += "<a href=\"view/social/whatsupp/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('whatsapp'); return true;\">";
+                            finalHtml += "<a id='whatsapp_vip_minivan'>";
                             finalHtml += "<img src='img/svg/whatsApp_round.svg' alt='whatsapp'>";
                             finalHtml += "</a>";
-                            finalHtml += "<a href=\"view/social/viber/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('viber'); return true;\">";
+                            finalHtml += "<a id='viber_vip_minivan'>";
                             finalHtml += "<img src='img/svg/viber_round.svg' alt='viber'>";
                             finalHtml += "</a>";
-                            finalHtml += "<a href=\"view/social/telegramm/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('telegram'); return true;\">";
+                            finalHtml += "<a id='telegram_vip_minivan'>";
                             finalHtml += "<img src='img/svg/telegram_round.svg' alt='telegram'>";
                             finalHtml += "</a>";
                             finalHtml += "</div>";
@@ -461,16 +582,13 @@ $(document).ready(function () {
     
                             finalHtml += "<div class=\"search__social\" style='margin-top: 0.5em;'>";
                             finalHtml += "<p>Заказать через:</p>";
-                            finalHtml += "<a href=\"view/social/whatsupp/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('whatsapp'); return true;\">";
+                            finalHtml += "<a id='whatsapp_pickup'>";
                             finalHtml += "<img src='img/svg/whatsApp_round.svg' alt='whatsapp'>";
                             finalHtml += "</a>";
-                            finalHtml += "<a href=\"view/social/viber/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('viber'); return true;\">";
+                            finalHtml += "<a id='viber_pickup'>";
                             finalHtml += "<img src='img/svg/viber_round.svg' alt='viber'>";
                             finalHtml += "</a>";
-                            finalHtml += "<a href=\"view/social/telegramm/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('telegram'); return true;\">";
+                            finalHtml += "<a id='telegram_pickup'>";
                             finalHtml += "<img src='img/svg/telegram_round.svg' alt='telegram'>";
                             finalHtml += "</a>";
                             finalHtml += "</div>";
@@ -489,6 +607,9 @@ $(document).ready(function () {
                     $('#cars_choice').css('display', 'block');
 
                     $('html, body').animate({ scrollTop: $('#form_search').offset().top }, 700);
+    
+                    QrTarget();
+    
                 },
                 error: function (data) {
                     console.log('ERROR \n');
@@ -1006,3 +1127,70 @@ $(document).ready(function () {
 
     //#endregion
 });
+
+function QrTarget() {
+    
+    var way_from = $('#taxi_from_input').val();
+    var way_to = $('#taxi_to_input').val();
+    
+    $("#whatsapp_sedan, #whatsapp_minivan, #whatsapp_vip_minivan, #whatsapp_pickup").on("click", function () {
+        
+        var car_name = $(this).parent().parent().parent().find(".detailTitle").text();
+        
+        var link = "https://api.whatsapp.com/send?phone=66945800333&text= Откуда > " + way_from + "%0d%0a, Куда > " + way_to + "%0d%0a, Машина > " + car_name + ".%0d%0a";
+        
+        if (isMobile.any()) {
+            // отправка get запроса
+            window.open(link, '_blank');
+            ym(51784160, 'reachGoal', 'social_WhatsApp');
+            
+        }
+        else {
+            PopUp.show("", "view/popup/whatsapp.php", "",function () {
+                    document.getElementById('msg_send').href = link;
+                    new QRCode(document.getElementById("qrcode"), link);
+                }
+            );
+        }
+    });
+    
+    $("#viber_sedan, #viber_minivan, #viber_vip_minivan, #viber_pickup").on("click", function () {
+        
+        var car_name = $(this).parent().parent().parent().find(".detailTitle").text();
+        
+        var link = "viber://pa?chatURI=taxiphuket.&context=hi&text= Откуда > " + way_from + ".%0d%0a Куда > " + way_to + "%0d%0a, Машина > " + car_name + ".%0d%0a";
+        
+        if (isMobile.any()) {
+            // отправка get запроса
+            window.open(link, '_blank');
+            ym(51784160, 'reachGoal', 'social_Viber');
+            
+        }
+        else {
+            PopUp.show("", "view/popup/viber.php", "", function () {
+                    document.getElementById('msg_send').href = link;
+                    new QRCode(document.getElementById("qrcode"), link);
+                }
+            );
+        }
+    });
+    
+    $("#telegram_sedan, #telegram_minivan, #telegram_vip_minivan, #telegram_pickup").on("click", function () {
+        
+        var link = "https://t.me/Taxi_Phuket_bot";
+        
+        if (isMobile.any()) {
+            // отправка get запроса
+            window.open(link, '_blank');
+            ym(51784160, 'reachGoal', 'social_Telegram');
+            
+        }
+        else {
+            PopUp.show("", "view/popup/telegram.php", "", function () {
+                    document.getElementById('msg_send').href = link;
+                    new QRCode(document.getElementById("qrcode"), link);
+                }
+            );
+        }
+    });
+}

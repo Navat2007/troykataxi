@@ -3,6 +3,8 @@
         <p>© 2018 TROYKATAXI</p>
     </div>
 </section>
+<div id="modal_cont"></div>
+<script defer async src="js/qrcode.js"></script>
 <script defer async src="js/libs/bootstrap.min.js"></script>
 <script defer async src="js/libs/flowtype.js"></script>
 <script defer="" async="" src="js/libs/sweetalert2.all.js"></script>
