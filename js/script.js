@@ -86,11 +86,11 @@ class PopUp {
                             
                             $('#popup_window_buttons').empty();
                             
-                            for (let i = 0; i < buttons.btn.length; i++) {
+                            for (var i = 0; i < buttons.btn.length; i++) {
                                 
                                 var btn = document.createElement('button');
                                 
-                                for (let j = 0; j < buttons.btn[i].class.length; j++) {
+                                for (var j = 0; j < buttons.btn[i].class.length; j++) {
                                     
                                     btn.classList.add(buttons.btn[i].class[j]);
                                     
@@ -496,15 +496,15 @@ $(document).ready(function () {
                             finalHtml += "<div class=\"search__social\" style='margin-top: 0.5em;'>";
                             finalHtml += "<p>Заказать через:</p>";
                             finalHtml += "<a href=\"view/social/whatsupp/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('whatsapp'); return true;\">";
+                            finalHtml += "onclick=\"ym(51784160, 'reachGoal', 'whatsapp'); return true;\">";
                             finalHtml += "<img src='img/svg/whatsApp_round.svg' alt='whatsapp'>";
                             finalHtml += "</a>";
                             finalHtml += "<a href=\"view/social/viber/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('viber'); return true;\">";
+                            finalHtml += "onclick=\"ym(51784160, 'reachGoal', 'viber'); return true;\">";
                             finalHtml += "<img src='img/svg/viber_round.svg' alt='viber'>";
                             finalHtml += "</a>";
                             finalHtml += "<a href=\"view/social/telegramm/\" target=\"_blank\"";
-                            finalHtml += "onclick=\"yaCounter51784160.reachGoal('telegram'); return true;\">";
+                            finalHtml += "onclick=\"ym(51784160, 'reachGoal', 'telegram'); return true;\">";
                             finalHtml += "<img src='img/svg/telegram_round.svg' alt='telegram'>";
                             finalHtml += "</a>";
                             finalHtml += "</div>";
@@ -1152,7 +1152,7 @@ function QrTarget() {
         if (isMobile.any()) {
             // отправка get запроса
             window.open(link, '_blank');
-            ym(51784160, 'reachGoal', 'social_WhatsApp');
+            ym(51784160, 'reachGoal', 'whatsapp');
             
         }
         else {
@@ -1178,7 +1178,7 @@ function QrTarget() {
         if (isMobile.any()) {
             // отправка get запроса
             window.open(link, '_blank');
-            ym(51784160, 'reachGoal', 'social_Viber');
+            ym(51784160, 'reachGoal', 'viber');
             
         }
         else {
@@ -1197,7 +1197,7 @@ function QrTarget() {
         if (isMobile.any()) {
             // отправка get запроса
             window.open(link, '_blank');
-            ym(51784160, 'reachGoal', 'social_Telegram');
+            ym(51784160, 'reachGoal', 'telegram');
             
         }
         else {

@@ -61,23 +61,23 @@
         <img src="img/svg/logo.svg" alt="Такси Тройка на Пхукете"></a>
       <div class="col-auto header__phone">
         <a href="tel:+74951280733"
-           onclick="yaCounter51784160.reachGoal('phone'); return true;"
+           onclick="ym(51784160, 'reachGoal', 'phone'); return true;"
            rel="nofollow noopener">+7 495 128 07 33</a>
       </div>
       <div class="col-auto header__social">
         <a href="view/social/whatsupp/"
            target="_blank"
-           onclick="yaCounter51784160.reachGoal('whatsapp'); return true;"
+           onclick="ym(51784160, 'reachGoal', 'whatsapp'); return true;"
            rel="nofollow noopener">
           <img src="img/svg/w.svg" alt="WhatsApp"></a>
         <a href="view/social/viber/"
            target="_blank"
-           onclick="yaCounter51784160.reachGoal('viber'); return true;"
+           onclick="ym(51784160, 'reachGoal', 'viber'); return true;"
            rel="nofollow noopener">
           <img src="img/svg/v.svg" alt="viber"></a>
         <a href="view/social/telegramm/"
            target="_blank"
-           onclick="yaCounter51784160.reachGoal('telegram'); return true;"
+           onclick="ym(51784160, 'reachGoal', 'telegram'); return true;"
            rel="nofollow noopener">
           <img src="img/svg/t.svg" alt="telegramm"></a>
       </div>
