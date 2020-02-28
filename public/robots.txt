@@ -1,0 +1,7 @@
+User-Agent: *
+
+Allow: *
+
+Host: troykataxi.ru
+
+Sitemap: https://troykataxi.ru/sitemap.xml

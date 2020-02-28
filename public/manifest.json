@@ -1,0 +1,28 @@
+{
+ "name": "РУССКОЕ ТАКСИ НА ПХУКЕТЕ",
+ "short_name": "Заказывайте такси из Пхукета. Русскоязычная круглосуточная поддержка. 5 классов авто: от экономичных седанов до микроавтобусов. Скидка 30%",
+ "icons": [{
+  "src": "favicon/icon_128x128.png",
+  "sizes": "128x128",
+  "type": "image/png"
+ }, {
+  "src": "favicon/icon_152x152.png",
+  "sizes": "152x152",
+  "type": "image/png"
+ }, {
+  "src": "favicon/icon_192x192.png",
+  "sizes": "192x192",
+  "type": "image/png"
+ }],
+ "start_url": "/index.php?homescreen=1",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#0a2735",
+
+ "version": "1.1",
+ "api_version": 4,
+ "layout": {
+  "logo": "https://troykataxi.ru/favicon/icon_ya.png",
+  "color": "#fbe05b"
+ }
+}
