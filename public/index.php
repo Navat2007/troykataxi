@@ -5,11 +5,13 @@ if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
     $version = rand();
     $versionJs = ".js?" . $version;
     $site_base = '/troykataxi/public/';
+    $file = 'public/php/headlings.csv';
 
 } else {
     $version = '001';
     $versionJs = ".min.js?" . $version;
     $site_base = '/';
+    $file = 'php/headlings.csv';
 }
 
 $site_url = "https://troykataxi.ru"; // url-сайта
@@ -49,8 +51,6 @@ if (isset($_GET['utm_source'])) {
         }
     }
 }
-
-$file = 'public/php/headlings.csv';
 
 ## Читает CSV файл и возвращает данные в виде массива.
 ## @param string $file_path Путь до csv файла.
