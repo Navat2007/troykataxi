@@ -4,7 +4,7 @@ if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
     $_SERVER['DOCUMENT_ROOT'] = 'D:/XAMPP/htdocs/troykataxi/';
     $version = rand();
     $versionJs = ".js?" . $version;
-    $site_base = '/troykataxi/';
+    $site_base = '/troykataxi/public/';
 
 } else {
     $version = '001';
@@ -27,6 +27,7 @@ $open_graph = array(
 
 // ПОДКЛЮЧЕНИЕ СТИЛЕЙ
 $styles_store = array(
+    'https://fonts.googleapis.com/css?family=Lato&display=swap',
     'css/styles.min.css?' . $version,
 );
 
@@ -41,11 +42,11 @@ $scripts_store = array(
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!--OG -->
+  <!--OG -->
     <?php
     if (!empty($open_graph) && is_array($open_graph)) {
         foreach ($open_graph AS $property => $content) {
@@ -54,17 +55,16 @@ $scripts_store = array(
     }
     ?>
 
-    <meta name="description" content="<?php echo $meta_desc; ?>">
-    <meta name="keywords" content="<?php echo $meta_key; ?>">
-    <title><?php echo $page_name . ' | ' . $title; ?></title>
+  <meta name="description" content="<?php echo $meta_desc; ?>">
+  <title><?php echo $open_graph['title']; ?></title>
 
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="favicon/icon_192x192.png">
-    <link rel="manifest" href="manifest.json">
-    <link rel="yandex-tableau-widget" href="manifest.json"/>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="favicon/icon_192x192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="yandex-tableau-widget" href="manifest.json"/>
 
-    <!-- CSS -->
-    <base href="<?php echo $site_base; ?>">
+  <!-- CSS -->
+  <base href="<?php echo $site_base; ?>">
     <?php
     if (!empty($styles_store) && is_array($styles_store)) {
         foreach ($styles_store AS $style) {
@@ -78,13 +78,54 @@ $scripts_store = array(
         }
     }
     ?>
-    <script>
-        window.jQuery || document.write('<script src="js/libs/jquery.min.js"><\/script>')
-    </script>
+  <script>
+      window.jQuery || document.write('<script src="js/libs/jquery.min.js"><\/script>')
+  </script>
 </head>
 <body>
-
-
+<header class="a-header">
+  <div class="a-header__wrap">
+    <div class="a-header__logo"><img src="img/WhatsApp.png" alt="WhatsApp"></div>
+    <div class="a-header__tel">
+      <i>Добавь телефон в список контактов <br>
+        Чтобы не потерять!</i>
+      <a href="tel:+66 80 514 03 33" rel="nofollow noopener">+66 80 514 03 33</a>
+    </div>
+    <h1 class="a-header__title">Узнай стоимость такси на Пхукете</h1>
+  </div>
+</header>
+<section class="a-main">
+  <div class="a-main__wrap">
+    <h2 class="a-main__title">Выбери один из способов ниже</h2>
+    <div class="a-main__section">
+      <div class="a-main__item">
+        <button type="button" class="a-btn --accent --md">Написать в WhatsApp</button>
+        <i>Нажмите кнопку и Чат откроется в новом окне</i>
+        <button type="button" class="a-btn --primary --md">Открыть Чат</button>
+      </div>
+      <div class="a-main__item">
+        <button type="button" class="a-btn --accent --md">Сканировать QR</button>
+        <i>Откройте Камеру или приложение для сканирования QR - кода.</i>
+        <div class="qrcode"></div>
+      </div>
+      <div class="a-main__item">
+        <button type="button" class="a-btn --accent --md">Введите номер</button>
+        <i>Введите номер телефона и Менеджер напишет в WhatsApp</i>
+        <div class="a-textfield">
+          <div class="a-textfield__inner">
+            <input class="a-textfield__input" type="tel">
+          </div>
+        </div>
+        <button type="button" class="a-btn --primary --md">Напишите Мне</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="a-reviews">
+  <div class="a-reviews__wrap">
+    <h2 class="a-reviews__title">Отзывы</h2>
+  </div>
+</section>
 </body>
 </html>
 
