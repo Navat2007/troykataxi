@@ -1,6 +1,6 @@
 <?php
 // Режим разработки ?
-$test = false;
+$test = true;
 
 if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
 

@@ -246,51 +246,64 @@ window.onload = () => {
     let sendBtn = document.getElementById('sMBtn');
     sendBtn.onclick = () => {
 
-        if (validate('sMtel') && !Cookies.get('send')) {
+        if (validate('sMtel')) {
 
-            let form = new FormData();
-            form.append('phone', document.getElementById('sMtel').value);
+            if(Cookies.get('send') != 1)
+            {
 
-            fetch('php/send_request_whatsapp.php', {
-                method: 'POST',
-                body: form
-            })
-                .then(function (response) {
-                    return response.json();
+                let phone = document.getElementById('sMtel').value.replace(/\s/g, '');
+                phone = phone.replace("+", "");
+                phone = phone.replace("(", "");
+                phone = phone.replace(")", "");
+                phone = phone.replace("-", "");
+                phone = phone.replace("-", "");
+
+                let form = new FormData();
+                form.append('phone', phone);
+
+                fetch('php/send_request_whatsapp.php', {
+                    method: 'POST',
+                    body: form
                 })
-                .then(function (result) {
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (result) {
 
-                    console.log(result);
+                        Cookies.set('send', "1", {
+                            expires: (1 / 24 / 60) * 2
+                        });
 
-                    Cookies.set('send', "1", {
-                        expires: 60 * 2
+                        Notif.show({
+                            type: 'success',
+                            title: 'Успех',
+                            text: 'Ваш запрос успешно отправлен.',
+                            timeToClose: 2000
+                        });
+
+                    })
+                    .catch(function (error) {
+                        console.log('Request failed', error);
+                        Notif.show({
+                            type: 'error',
+                            title: 'Ошибка',
+                            text: 'Что-то пошло не так, попробуйте еще раз',
+                            timeToClose: 2000
+                        });
                     });
 
-                    Notif.show({
-                        type: 'success',
-                        title: 'Успех',
-                        text: 'Ваш запрос успешно отправлен.',
-                        timeToClose: 2000
-                    });
-
-                })
-                .catch(function (error) {
-                    console.log('Request failed', error);
-                    Notif.show({
-                        type: 'error',
-                        title: 'Ошибка',
-                        text: 'Что-то пошло не так, попробуйте еще раз',
-                        timeToClose: 2000
-                    });
+            }
+            else {
+                Notif.show({
+                    type: 'error',
+                    title: 'Ошибка',
+                    text: 'Вы уже отправляли запрос, подождите 2 минуты',
+                    timeToClose: 2000
                 });
-        } else {
-            Notif.show({
-                type: 'error',
-                title: 'Ошибка',
-                text: 'Вы уже отправляли запрос, подождите 2 минуты',
-                timeToClose: 2000
-            });
+            }
+
         }
+
     };
 
     document.getElementById('sMtel').addEventListener('input', maskInput);
