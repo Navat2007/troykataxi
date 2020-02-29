@@ -245,14 +245,58 @@ window.onload = () => {
 
     let sendBtn = document.getElementById('sMBtn');
     sendBtn.onclick = () => {
-        if (validate('sMtel')) {
+
+        if (validate('sMtel') && !Cookies.get('send')) {
+
+            let form = new FormData();
+            form.append('phone', document.getElementById('sMtel').value);
+
+            fetch('public/php/send_request_whatsapp.php', {
+                method: 'POST',
+                body: form
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (result) {
+
+                    console.log(result);
+
+                    Cookies.set('send', "1", {
+                        expires: 60 * 2
+                    });
+
+                    Notif.show({
+                        type: 'success',
+                        title: 'Успех',
+                        text: 'Ваш запрос успешно отправлен.',
+                        timeToClose: 2000
+                    });
+
+                })
+                .catch(function (error) {
+                    console.log('Request failed', error);
+                    Notif.show({
+                        type: 'error',
+                        title: 'Ошибка',
+                        text: 'Что-то пошло не так, попробуйте еще раз',
+                        timeToClose: 2000
+                    });
+                });
+
+        }
+        else
+        {
+
             Notif.show({
-                type: 'success',
-                title: 'Успех',
-                text: 'Ваш запрос успешно отправлен.',
+                type: 'error',
+                title: 'Ошибка',
+                text: 'Вы уже отправляли запрос, подождите 2 минуты',
                 timeToClose: 2000
             });
+
         }
+
     };
 
     document.getElementById('sMtel').addEventListener('input', maskInput);
@@ -390,6 +434,7 @@ window.onload = () => {
 
     showDiscussion();
     //#endregion
+
 };
 
 function validate(inputID) {

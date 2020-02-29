@@ -8,7 +8,7 @@ if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
     $file = 'public/php/headlings.csv';
 
 } else {
-    $version = '002';
+    $version = '004';
     $versionJs = ".min.js?" . $version;
     $site_base = '/';
     $file = 'php/headlings.csv';
@@ -37,6 +37,7 @@ $styles_store = array(
 $scripts_store = array(
     '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
     'js/libs/qrcode.js',
+    'js/libs/js.cookie.js',
     'js/scripts' . $versionJs,
 );
 
