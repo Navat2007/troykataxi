@@ -251,7 +251,7 @@ window.onload = () => {
             let form = new FormData();
             form.append('phone', document.getElementById('sMtel').value);
 
-            fetch('public/php/send_request_whatsapp.php', {
+            fetch('php/send_request_whatsapp.php', {
                 method: 'POST',
                 body: form
             })
