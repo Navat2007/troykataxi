@@ -245,7 +245,6 @@ window.onload = () => {
 
     let sendBtn = document.getElementById('sMBtn');
     sendBtn.onclick = () => {
-
         if (validate('sMtel')) {
             Notif.show({
                 type: 'success',
