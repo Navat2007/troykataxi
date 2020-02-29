@@ -1,5 +1,26 @@
 'use strict';
 
+let isMobile = {
+    Android: function () {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function () {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function () {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function () {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function () {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function () {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
 class Notif {
 
     static prop_init() {
@@ -218,7 +239,9 @@ class Notif {
 }
 
 window.onload = () => {
-    new QRCode(document.getElementById("qrcode"), 'https://api.whatsapp.com/send?phone=66945800333&text= Для%20начала%20нажмите%20Отправить%20--->');
+
+    if (isMobile.any()) document.getElementById('qRCodeBlock').style.display = 'none';
+    else new QRCode(document.getElementById("qRCode"), 'https://api.whatsapp.com/send?phone=66945800333&text= Для%20начала%20нажмите%20Отправить%20--->');
 
     let sendBtn = document.getElementById('sMBtn');
     sendBtn.onclick = () => {
@@ -236,7 +259,7 @@ window.onload = () => {
     document.getElementById('sMtel').addEventListener('input', maskInput);
 
     //#region VK
-    var quantityComments = 50;
+    var quantityComments = 6;
 
     var group_id = '101187764';
     var topic_id = '35118150';
@@ -245,9 +268,8 @@ window.onload = () => {
     var commentTemplate;
     if ('content' in document.querySelector('#comment-template')) {
         commentTemplate = document.querySelector('#comment-template').content;
-    }
-    else {
-        commentTemplate = document.querySelector('.comment');
+    } else {
+        commentTemplate = document.querySelector('.a-comment');
     }
     var MONTHS = ['янв', 'фев', 'марта', 'апр', 'мая', 'июня', 'июля', 'августа', 'сентября', 'окт', 'ноября', 'дек'];
     var VK_LINK = 'https://vk.com/';
@@ -258,8 +280,7 @@ window.onload = () => {
         var status;
         if (checkStatus === 0) {
             status = 'Не в сети';
-        }
-        else {
+        } else {
             status = 'В сети';
         }
         return status;
@@ -303,9 +324,9 @@ window.onload = () => {
         var sourceSticker = '';
         var date = new Date(data.items[i].date * 1000);
         var commentDate = validationDate(date);
-        element.querySelector('.comment__text-title').textContent = getCommentText(data, i);
-        element.querySelector('.comment__like-number').textContent = data.items[i].likes.count;
-        element.querySelector('.comment__comment-date').href = VK_LINK + 'topic-' + group_id + '_' + topic_id + '?post=' + data.items[i].id;
+        element.querySelector('.a-comment__text-title').textContent = getCommentText(data, i);
+        element.querySelector('.a-comment__like-number').textContent = data.items[i].likes.count;
+        element.querySelector('.a-comment__comment-date').href = VK_LINK + 'topic-' + group_id + '_' + topic_id + '?post=' + data.items[i].id;
         for (var j = 0; j < data.profiles.length; j++) {
             if (data.items[i].from_id === data.profiles[j].id) {
                 sourceIDLink = VK_LINK + data.profiles[j].screen_name;
@@ -328,13 +349,13 @@ window.onload = () => {
             }
         }
 
-        element.querySelector('.comment__logo-image').src = sourcePhoto;
-        element.querySelector('.comment__logo').href = sourceIDLink;
-        element.querySelector('.comment__online').textContent = stateOnline;
-        element.querySelector('.comment__group-title').textContent = nameTitle;
-        element.querySelector('.comment__group-title').href = sourceIDLink;
-        element.querySelector('.comment__comment-date').textContent = commentDate;
-        //element.querySelector('.comment__image').src = sourceSticker;
+        element.querySelector('.a-comment__logo-image').src = sourcePhoto;
+        element.querySelector('.a-comment__logo').href = sourceIDLink;
+        element.querySelector('.a-comment__online').textContent = stateOnline;
+        element.querySelector('.a-comment__group-title').textContent = nameTitle;
+        element.querySelector('.a-comment__group-title').href = sourceIDLink;
+        element.querySelector('.a-comment__comment-date').textContent = commentDate;
+        //element.querySelector('.a-comment__image').src = sourceSticker;
         return element;
     }
 
@@ -344,8 +365,7 @@ window.onload = () => {
             for (var i = 0; i < quantityComments; i++) {
                 fragment.appendChild(createCommentElement(data, i));
             }
-        }
-        else {
+        } else {
             for (var i = 0; i < data.count; i++) {
                 fragment.appendChild(createCommentElement(data, i));
             }

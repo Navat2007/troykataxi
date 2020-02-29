@@ -8,7 +8,7 @@ if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
     $file = 'public/php/headlings.csv';
 
 } else {
-    $version = '001';
+    $version = '002';
     $versionJs = ".min.js?" . $version;
     $site_base = '/';
     $file = 'php/headlings.csv';
@@ -200,10 +200,10 @@ for ($i = 0; $i < count($data); $i++) {
         <i class="comment">Нажмите кнопку и Чат откроется в новом окне</i>
         <a class="a-btn --primary --md" target="_blank" href="https://api.whatsapp.com/send?phone=66945800333&text= Для%20начала%20нажмите%20Отправить%20--->" rel="noopener nofollow">Открыть Чат</a>
       </div>
-      <div class="a-main__item">
+      <div class="a-main__item" id="qRCodeBlock">
         <p class="a-btn --accent --md" style="cursor: default">Сканировать QR</p>
         <i class="comment">Откройте Камеру или приложение для сканирования QR - кода.</i>
-        <div class="qrcode" id="qrcode"></div>
+        <div class="qrcode" id="qRCode"></div>
       </div>
       <div class="a-main__item">
         <p class="a-btn --accent --md" style="cursor: default">Введите номер</p>
@@ -223,29 +223,29 @@ for ($i = 0; $i < count($data); $i++) {
 <section class="a-reviews">
   <div class="a-reviews__wrap">
     <h2 class="a-reviews__title">Отзывы</h2>
-    <div class="discussions-vk">
+    <div class="discussions-vk a-reviews__section">
       <template id="comment-template" style="display: none">
-        <div class="comment">
-          <div class="comment__column-1">
-            <a class="comment__logo" href="" target="_blank">
-              <img class="comment__logo-image" src="https://vk.com/images/camera_100.png"
+        <div class="a-comment">
+          <div class="a-comment__column-1">
+            <a class="a-comment__logo" href="" target="_blank">
+              <img class="a-comment__logo-image" src="https://vk.com/images/camera_100.png"
                    alt="logo-group">
             </a>
-            <div class="comment__column-2">
-              <div class="comment__header">
-                <a class="comment__group-title" href="" target="_blank"></a>
-                <a class="comment__comment-date" href="" target="_blank"></a>
+            <div class="a-comment__column-2">
+              <div class="a-comment__header">
+                <a class="a-comment__group-title" href="" target="_blank"></a>
+                <a class="a-comment__comment-date" href="" target="_blank"></a>
               </div>
-              <div class="comment__like">
+              <div class="a-comment__like">
                 <p>
                   <i class="material-icons" alt="Количество лайков:">favorite</i>
-                  <span class="comment__like-number"></span>
+                  <span class="a-comment__like-number"></span>
                 </p>
-                <p class="comment__online"></p>
+                <p class="a-comment__online"></p>
               </div>
             </div>
           </div>
-          <p class="comment__text-title"></p>
+          <p class="a-comment__text-title"></p>
         </div>
       </template>
     </div>
