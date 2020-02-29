@@ -19,7 +19,7 @@ if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
 
     } else {
 
-        $version = '005';
+        $version = '006';
         $versionJs = ".min.js?" . $version;
 
     }
