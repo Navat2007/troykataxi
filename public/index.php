@@ -1,15 +1,21 @@
 <?php
-// Если true - выгружаем на сайт - false - тестовый стенд
+// Режим разработки ?
+$prod = false;
+
 if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
     $_SERVER['DOCUMENT_ROOT'] = 'D:/XAMPP/htdocs/troykataxi/';
     $version = rand();
     $versionJs = ".js?" . $version;
     $site_base = '/troykataxi/public/';
     $file = 'public/php/headlings.csv';
-
 } else {
-    $version = '004';
-    $versionJs = ".min.js?" . $version;
+    if ($prod == true) {
+        $version = rand();
+        $versionJs = ".js?" . $version;
+    } else {
+        $version = '005';
+        $versionJs = ".min.js?" . $version;
+    }
     $site_base = '/';
     $file = 'php/headlings.csv';
 }
@@ -199,7 +205,10 @@ for ($i = 0; $i < count($data); $i++) {
       <div class="a-main__item">
         <p class="a-btn --accent --md" style="cursor: default">Написать в WhatsApp</p>
         <i class="comment">Нажмите кнопку и Чат откроется в новом окне</i>
-        <a class="a-btn --primary --md" target="_blank" href="https://api.whatsapp.com/send?phone=66945800333&text= Для%20начала%20нажмите%20Отправить%20--->" rel="noopener nofollow">Открыть Чат</a>
+        <a class="a-btn --primary --md"
+           target="_blank"
+           href="https://api.whatsapp.com/send?phone=66945800333&text= Для%20начала%20нажмите%20Отправить%20--->"
+           rel="noopener nofollow">Открыть Чат</a>
       </div>
       <div class="a-main__item" id="qRCodeBlock">
         <p class="a-btn --accent --md" style="cursor: default">Сканировать QR</p>
@@ -211,7 +220,14 @@ for ($i = 0; $i < count($data); $i++) {
         <i class="comment">Введите номер телефона и Менеджер напишет в WhatsApp</i>
         <div class="a-textfield">
           <div class="a-textfield__inner">
-            <input class="a-textfield__input" type="tel" id="sMtel" pattern="(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d" data-mask="+7 (000) 000-00-00" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+            <input class="a-textfield__input"
+                   type="tel"
+                   id="sMtel"
+                   pattern="(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d"
+                   data-mask="+7 (000) 000-00-00"
+                   autocomplete="tel"
+                   placeholder="+7 (___) ___-__-__"
+                   required>
             <i class="a-textfield__icon"></i>
           </div>
           <span class="a-textfield__info">Поле не должно быть пустым!</span>

@@ -283,20 +283,14 @@ window.onload = () => {
                         timeToClose: 2000
                     });
                 });
-
-        }
-        else
-        {
-
+        } else {
             Notif.show({
                 type: 'error',
                 title: 'Ошибка',
                 text: 'Вы уже отправляли запрос, подождите 2 минуты',
                 timeToClose: 2000
             });
-
         }
-
     };
 
     document.getElementById('sMtel').addEventListener('input', maskInput);
