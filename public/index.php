@@ -1,23 +1,31 @@
 <?php
 // Режим разработки ?
-$prod = false;
+$test = false;
 
 if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
+
     $_SERVER['DOCUMENT_ROOT'] = 'D:/XAMPP/htdocs/troykataxi/';
     $version = rand();
     $versionJs = ".js?" . $version;
     $site_base = '/troykataxi/public/';
     $file = 'public/php/headlings.csv';
+
 } else {
-    if ($prod == true) {
+
+    if ($test == true) {
+
         $version = rand();
         $versionJs = ".js?" . $version;
+
     } else {
+
         $version = '005';
         $versionJs = ".min.js?" . $version;
+
     }
     $site_base = '/';
     $file = 'php/headlings.csv';
+
 }
 
 $site_url = "https://troykataxi.ru"; // url-сайта
