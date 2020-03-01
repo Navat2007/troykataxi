@@ -1,31 +1,21 @@
 <?php
-// Режим разработки ?
-$test = true;
+
+// Включен режим разработки?
+$test = false;
+$version = rand();
+$versionJs = ".js?" . $version; // Для сжатия JS файлов
+$site_base = '/';
+$file = 'php/headlings.csv';
 
 if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
-
     $_SERVER['DOCUMENT_ROOT'] = 'D:/XAMPP/htdocs/troykataxi/';
-    $version = rand();
-    $versionJs = ".js?" . $version;
     $site_base = '/troykataxi/public/';
     $file = 'public/php/headlings.csv';
-
 } else {
-
-    if ($test == true) {
-
-        $version = rand();
-        $versionJs = ".js?" . $version;
-
-    } else {
-
-        $version = '006';
+    if ($test == false) {
+        $version = '008'; // 01.03.2020
         $versionJs = ".min.js?" . $version;
-
     }
-    $site_base = '/';
-    $file = 'php/headlings.csv';
-
 }
 
 $site_url = "https://troykataxi.ru"; // url-сайта
@@ -67,11 +57,6 @@ if (isset($_GET['utm_source'])) {
     }
 }
 
-## Читает CSV файл и возвращает данные в виде массива.
-## @param string $file_path Путь до csv файла.
-## string $col_delimiter Разделитель колонки (по умолчанию автоопределине)
-## string $row_delimiter Разделитель строки (по умолчанию автоопределине)
-## ver 6
 function kama_parse_csv_file($file_path, $file_encodings = ['cp1251', 'UTF-8'], $col_delimiter = '', $row_delimiter = "")
 {
 

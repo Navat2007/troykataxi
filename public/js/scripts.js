@@ -248,8 +248,7 @@ window.onload = () => {
 
         if (validate('sMtel')) {
 
-            if(Cookies.get('send') != 1)
-            {
+            if (Cookies.get('send') != 1) {
 
                 let phone = document.getElementById('sMtel').value.replace(/\s/g, '');
                 phone = phone.replace("+", "");
@@ -292,8 +291,7 @@ window.onload = () => {
                         });
                     });
 
-            }
-            else {
+            } else {
                 Notif.show({
                     type: 'error',
                     title: 'Ошибка',
