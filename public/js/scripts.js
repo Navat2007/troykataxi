@@ -248,8 +248,7 @@ window.onload = () => {
 
         if (validate('sMtel')) {
 
-            if(Cookies.get('send') != 1)
-            {
+            if (Cookies.get('send') != 1) {
 
                 let phone = document.getElementById('sMtel').value.replace(/\s/g, '');
                 phone = phone.replace("+", "");
@@ -280,6 +279,8 @@ window.onload = () => {
                             text: 'Ваш запрос успешно отправлен.',
                             timeToClose: 2000
                         });
+                        
+                        ym(51784160, 'reachGoal', 'telefon'); return true;
 
                     })
                     .catch(function (error) {
@@ -292,8 +293,7 @@ window.onload = () => {
                         });
                     });
 
-            }
-            else {
+            } else {
                 Notif.show({
                     type: 'error',
                     title: 'Ошибка',
