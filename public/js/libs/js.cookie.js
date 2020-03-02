@@ -52,13 +52,9 @@
 				path: '/'
 			}, api.defaults, attributes);
 
-			console.log(attributes.expires);
-
 			if (typeof attributes.expires === 'number') {
 				attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e+5);
 			}
-
-			console.log(attributes.expires);
 
 			// We're using "expires" because "max-age" is not supported by IE
 			attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
