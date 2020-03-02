@@ -269,6 +269,8 @@ window.onload = () => {
                     })
                     .then(function (result) {
 
+                        console.log(result);
+
                         Cookies.set('send', "1", {
                             expires: (1 / 24 / 60) * 2
                         });
