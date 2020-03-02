@@ -31,7 +31,7 @@ curl_close($ch);
 
 $add_result = json_decode($add_body)->result;
 
-if($add_result == 0 || $add_result == 2)
+if((int)$add_result == 0 || (int)$add_result == 2)
 {
 
     $data['json_data'] = json_encode([
@@ -47,11 +47,28 @@ if($add_result == 0 || $add_result == 2)
     $body = curl_exec($ch);
     curl_close($ch);
 
+    $body_result = json_decode($body)->result;
+
+    if((int)$body_result == 82)
+        send_to_amo($phone, $counter);
+
 }
 else
 {
 
-    $name = $counter;
+    send_to_amo($phone, $counter);
+
+}
+
+$content = (object)[
+
+    'params' => 'Done',
+
+];
+
+echo json_encode($content);
+
+function send_to_amo($phone, $name){
 
     $data = array(
         'add' =>
@@ -121,11 +138,3 @@ else
     $result = json_decode($out, TRUE);
 
 }
-
-$content = (object)[
-
-    'params' => "Done",
-
-];
-
-echo json_encode($content);
