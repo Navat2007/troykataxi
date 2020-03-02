@@ -279,6 +279,8 @@ window.onload = () => {
                             text: 'Ваш запрос успешно отправлен.',
                             timeToClose: 2000
                         });
+                        
+                        ym(51784160, 'reachGoal', 'telefon'); return true;
 
                     })
                     .catch(function (error) {

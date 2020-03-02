@@ -13,7 +13,7 @@ if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
     $file = 'public/php/headlings.csv';
 } else {
     if ($test == false) {
-        $version = '008'; // 01.03.2020
+        $version = '009'; // 02.03.2020
         $versionJs = ".min.js?" . $version;
     }
 }
@@ -180,6 +180,8 @@ for ($i = 0; $i < count($data); $i++) {
   <script>
       window.jQuery || document.write('<script src="js/libs/jquery.min.js"><\/script>')
   </script>
+
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/ya.html'; ?>
 </head>
 <body>
 <header class="a-header">
@@ -187,7 +189,7 @@ for ($i = 0; $i < count($data); $i++) {
     <div class="a-header__logo"><img src="img/WhatsApp.png" alt="WhatsApp"></div>
     <i class="a-header__comment">Добавь телефон в список контактов <br>
       Чтобы не потерять!</i>
-    <a class="a-header__link" href="tel:+66 80 514 03 33" rel="nofollow noopener">+66 80 514 03 33</a>
+    <a class="a-header__link" href="tel:+66 80 514 03 33" rel="nofollow noopener" onclick="ym(51784160, 'reachGoal', 'shapka'); return true;">+66 80 514 03 33</a>
     <h1 class="a-header__title"><?= $h1; ?></h1>
   </div>
 </header>
@@ -200,6 +202,7 @@ for ($i = 0; $i < count($data); $i++) {
         <i class="comment">Нажмите кнопку и Чат откроется в новом окне</i>
         <a class="a-btn --primary --md"
            target="_blank"
+           onclick="ym(51784160, 'reachGoal', 'whats'); return true;"
            href="https://api.whatsapp.com/send?phone=66945800333&text= Для%20начала%20нажмите%20Отправить%20--->"
            rel="noopener nofollow">Открыть Чат</a>
       </div>
