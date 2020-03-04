@@ -511,6 +511,7 @@ function maskInput() {
             if (maskIndex >= value.length) break;
 
             if (mask[maskIndex] === "0" && value[valueIndex].match(numberPattern) === null) break;
+            if (mask[maskIndex] === "+" && value[valueIndex] === '8') break;
 
             // Found a literal
             while (mask[maskIndex].match(literalPattern) === null) {
