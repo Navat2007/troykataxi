@@ -13,7 +13,7 @@ if (strpos($_SERVER['DOCUMENT_ROOT'], 'D:/') !== false) {
     $file = 'public/php/headlings.csv';
 } else {
     if ($test == false) {
-        $version = '010'; // 02.03.2020
+        $version = '011'; // 03.03.2020
         $versionJs = ".min.js?" . $version;
     }
 }

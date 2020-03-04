@@ -501,6 +501,7 @@ function maskInput() {
         literalPattern = /[0\*]/,
         numberPattern = /[0-9]/,
         newValue = "";
+
     try {
         let maskLength = mask.length,
             valueIndex = 0,
@@ -513,7 +514,7 @@ function maskInput() {
 
             // Found a literal
             while (mask[maskIndex].match(literalPattern) === null) {
-                if (value[valueIndex] === mask[maskIndex]) break;
+                if (value[valueIndex] === mask[maskIndex]) break; // находит совпадения в маске и в вводе
                 newValue += mask[maskIndex++];
             }
             newValue += value[valueIndex++];
