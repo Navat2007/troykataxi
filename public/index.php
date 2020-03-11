@@ -198,7 +198,9 @@ for ($i = 0; $i < count($data); $i++) {
     <h2 class="a-main__title">Выбери один из способов ниже</h2>
     <div class="a-main__section">
       <div class="a-main__item">
-        <p class="a-btn --accent --md" style="cursor: default">Написать в WhatsApp</p>
+        <a class="a-btn --accent --md" target="_blank" onclick="ym(51784160, 'reachGoal', 'whats'); return true;"
+           href="https://api.whatsapp.com/send?phone=66945800333&text= Для%20начала%20нажмите%20Отправить%20--->"
+           rel="noopener nofollow">Написать в WhatsApp</a>
         <i class="comment">Нажмите кнопку и Чат откроется в новом окне</i>
         <a class="a-btn --primary --md"
            target="_blank"
